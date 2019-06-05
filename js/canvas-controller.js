@@ -3,14 +3,6 @@
 const gCanvas = document.querySelector('#canvas');
 const gCtx = gCanvas.getContext('2d');
 
-ctx.fillStyle = 'yellow';
-ctx.fillRect(100, 0, 200, 200);
-
-function downloadImg (el) {
-    var image = canvas.toDataURL("image/png;base64");
-    el.href = image;
-  };
-
 
 function init() {
     getCanvasSettings();
@@ -102,3 +94,7 @@ function drawCircle(x,y) {
     // gCtx.fill();
 }
 
+function downloadImg (el) {
+    var image = canvas.toDataURL("image/png;base64");
+    el.href = image;
+  };
