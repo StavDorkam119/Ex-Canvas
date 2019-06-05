@@ -1,0 +1,11 @@
+
+canvas {
+    border: 1px solid black;
+    margin: 0 auto;
+    display: block;
+}
+
+.banner {
+    display: inline-block;
+    margin: 0 auto;
+}
