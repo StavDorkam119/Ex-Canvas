@@ -37,3 +37,5 @@ function updateCanvasColor(color) {
     gCanvasSettings.color = color;
     saveToStorage('gCanvasSettings', gCanvasSettings);
 }
+
+var test;
