@@ -1,10 +1,10 @@
 'use strict'
 
-const canvas = document.querySelector('canvas');
+const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 
 function init() {
-    // setCanvasSize()
+    getCanvasSettings();
 }
 
 function setCanvasSize() {
@@ -17,6 +17,10 @@ function setCanvasColors() {
     ctx.strokeStyle = getColor();
     canvas.style.backgroundColor = getBackgroundColor();
     ctx.fillStyle = getBackgroundColor();
+}
+
+function onChangeShape(shape) {
+    
 }
 
 function drawTriangle(x,y) {
@@ -45,4 +49,7 @@ function drawCircle(x,y) {
     ctx.beginPath();
     ctx.arc(100, 75, 50, 0, 2 * Math.PI);
     ctx.stroke();
+
+
 }
+
