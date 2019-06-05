@@ -4,13 +4,6 @@ const gCanvas = document.querySelector('#canvas');
 const gCtx = gCanvas.getContext('2d');
 
 
-
-function downloadImg (el) {
-    var image = canvas.toDataURL("image/png;base64");
-    el.href = image;
-  };
-
-
 function init() {
     getCanvasSettings();
     setCanvasSize();
@@ -104,3 +97,8 @@ function drawCircle(x,y) {
 function onClearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
 }
+
+function downloadCanvas (el) {
+    var image = canvas.toDataURL("image/png;base64");
+    el.href = image;
+  };

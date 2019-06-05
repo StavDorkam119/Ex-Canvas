@@ -10,10 +10,10 @@
 </head>
 
 <body onload="init()">
-    <section class="banner" >
-        <label for="shape-color">Change Shape Color</label>
+    <section class="banner">
+        <label for="shape-color">Change Shape Border Color:</label>
         <input type="color" id="shape-color" name="shape-color" onchange="onChangeCanvasShapeColor(this.value)" />
-        <label for="background-color">Change Background Color</label>
+        <label for="background-color">Change Background Color:</label>
         <input type="color" id="background-color" name="background-color"
             onchange="onChangeCanvasBackgroundColor(this.value)" />
         <select onchange="onChangeShape(this.value)" >
@@ -25,7 +25,7 @@
         <button onclick="onClearCanvas()">Clear</button>
     </section>
     <canvas onclick="draw(event)" id="canvas" width="500" height="500"></canvas>
-    <a id="download" download="myImage.jpg" href="" onclick="downloadImg(this);">Download Canvas</a>
+    <a id="download" download="myCanvas.jpg" href="" onclick="downloadCanvas(this);">Download Canvas</a>
 
     <script src="js/canvas-controller.js"></script>
     <script src="js/canvas-service.js"></script>
