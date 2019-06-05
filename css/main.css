@@ -37,8 +37,16 @@ select {
     padding: 0.35rem 2rem;
 }
 
-select:hover,button:hover, a:hover {
+select:hover, a:hover {
     background: #41b141;
+}
+
+button{
+    background-color: #e21313c7;
+}
+
+button:hover {
+    background-color: #f00303e8;
 }
 
 input {
@@ -52,8 +60,8 @@ a {
     border: 1px solid black;
     margin: 10px;
     display: flex;
-    justify-content: center;
     background-color: #078d34;
+    justify-content: center;
 }
 
 
