@@ -3,6 +3,15 @@
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 
+ctx.fillStyle = 'yellow';
+ctx.fillRect(100, 0, 200, 200);
+
+function downloadImg (el) {
+    var image = canvas.toDataURL("image/png;base64");
+    el.href = image;
+  };
+
+
 function init() {
     getCanvasSettings();
 }
