@@ -20,5 +20,20 @@ function getColor() {
 }
 
 function getBackgroundColor() {
-    return gCanvasSettings.backgroundcolor;
+    return gCanvasSettings.backgroundColor;
+}
+
+function updateCanvasBackgroundColor(backgroundColor) {
+    gCanvasSettings.backgroundColor = backgroundColor;
+    saveToStorage('gCanvasSettings', gCanvasSettings);
+}
+
+function updateCanvasShape(shape) {
+    gCanvasSettings.currShape = shape;
+    saveToStorage('gCanvasSettings', gCanvasSettings);
+}
+
+function updateCanvasColor(color) {
+    gCanvasSettings.color = color;
+    saveToStorage('gCanvasSettings', gCanvasSettings);
 }

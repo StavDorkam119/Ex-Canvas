@@ -1,7 +1,7 @@
 'use strict'
 
-const canvas = document.querySelector('#canvas');
-const ctx = canvas.getContext('2d');
+const gCanvas = document.querySelector('#canvas');
+const gCtx = gCanvas.getContext('2d');
 
 ctx.fillStyle = 'yellow';
 ctx.fillRect(100, 0, 200, 200);
@@ -14,51 +14,91 @@ function downloadImg (el) {
 
 function init() {
     getCanvasSettings();
+    setCanvasSize();
+    setInitialSettings();
+    gCanvas.addEventListener('mousemove', ev => {
+        if (ev.buttons !== 1) return;
+        draw(ev);
+    })
 }
 
 function setCanvasSize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    gCanvas.width = window.innerWidth;
+    gCanvas.height = window.innerHeight;
 }
 
 
-function setCanvasColors() {
-    ctx.strokeStyle = getColor();
-    canvas.style.backgroundColor = getBackgroundColor();
-    ctx.fillStyle = getBackgroundColor();
+function renderCanvasColors() {
+    gCtx.strokeStyle = getColor();
+    gCanvas.style.backgroundColor = getBackgroundColor();
+    gCtx.fillStyle = getBackgroundColor();
 }
 
 function onChangeShape(shape) {
-    
+    updateCanvasShape(shape);
 }
 
+function onChangeCanvasShapeColor(color) {
+    updateCanvasColor(color);
+    gCtx.strokeStyle = getColor();
+    // gCanvas.style.backgroundColor = getBackgroundColor();
+    // gCtx.fillStyle = getBackgroundColor();
+}
+
+function onChangeCanvasBackgroundColor(backgroundColor) {
+    updateCanvasBackgroundColor(backgroundColor);
+    // gCtx.strokeStyle = getColor();
+    gCanvas.style.backgroundColor = getBackgroundColor();
+    gCtx.fillStyle = getBackgroundColor();
+}
+
+function draw(ev) {
+    const {offsetX, offsetY} = ev
+    switch(gCanvasSettings.currShape) {
+        case 'triangle':
+            drawTriangle(offsetX, offsetY);
+            break;
+        case 'circle': 
+            drawCircle(offsetX, offsetY);
+            break;
+        case 'rectangle': 
+            drawRect(offsetX, offsetY);
+            break;
+       }
+}
+
+
+function setInitialSettings() {
+    gCtx.strokeStyle = getColor();
+    gCanvas.style.backgroundColor = getBackgroundColor();
+    gCtx.fillStyle = getBackgroundColor();
+}
+
+
 function drawTriangle(x,y) {
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(300, 150);
-    ctx.lineTo(100, 100);
-    ctx.closePath()
-    ctx.lineWidth = 5;
+    gCtx.moveTo(x, y);
+    gCtx.beginPath();
+    gCtx.lineTo(x-75, y-75);
+    gCtx.lineTo(x+75, y-75);
+    gCtx.lineTo(x, y+75);
+    gCtx.closePath()
+    gCtx.lineWidth = 5;
     // ctx.strokeStyle = getColor();
     // ctx.fillStyle = '#ff0000'
-    ctx.stroke();
-    ctx.fill()
+    gCtx.stroke();
+    gCtx.fill()
  
 }
 
 function drawRect(x,y) {
-    ctx.rect(x,y, 150, 150)
-    // ctx.fillStyle = 'orange'
-    ctx.fillRect(x,y, 150, 150)
-    ctx.stroke()
-    ctx.fill()
+    gCtx.strokeRect((x-75),(y-75), 150, 150);
+    // gCtx.fillRect((x-75),(y-75), 150, 150);
 }
 
 function drawCircle(x,y) {
-    ctx.beginPath();
-    ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-    ctx.stroke();
-
-
+    gCtx.beginPath();
+    gCtx.arc(x, y, 75, 0, 2 * Math.PI);
+    gCtx.stroke();
+    // gCtx.fill();
 }
 
