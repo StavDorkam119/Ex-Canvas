@@ -3,8 +3,7 @@
 const gCanvas = document.querySelector('#canvas');
 const gCtx = gCanvas.getContext('2d');
 
-ctx.fillStyle = 'yellow';
-ctx.fillRect(100, 0, 200, 200);
+
 
 function downloadImg (el) {
     var image = canvas.toDataURL("image/png;base64");
@@ -92,7 +91,7 @@ function drawTriangle(x,y) {
 
 function drawRect(x,y) {
     gCtx.strokeRect((x-75),(y-75), 150, 150);
-    // gCtx.fillRect((x-75),(y-75), 150, 150);
+    gCtx.fillRect((x-75),(y-75), 150, 150);
 }
 
 function drawCircle(x,y) {
@@ -102,3 +101,6 @@ function drawCircle(x,y) {
     // gCtx.fill();
 }
 
+function onClearCanvas() {
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+}
