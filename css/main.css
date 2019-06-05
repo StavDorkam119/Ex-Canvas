@@ -19,7 +19,7 @@ body {
 }
 
 button, select {
-    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: lighter;
     text-decoration: none;
     border: 1px solid black;
@@ -33,6 +33,9 @@ button, select {
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, transform 150ms ease;
+}
+select {
+    padding: 0.3rem 2rem;
 }
 
 select:hover,button:hover {
