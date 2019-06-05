@@ -37,3 +37,6 @@ function updateCanvasColor(color) {
     saveToStorage('gCanvasSettings', gCanvasSettings);
 }
 
+function getShape() {
+    return gCanvasSettings.currShape;
+}

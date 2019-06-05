@@ -20,12 +20,6 @@ function setCanvasSize() {
 }
 
 
-function renderCanvasColors() {
-    gCtx.strokeStyle = getColor();
-    gCanvas.style.backgroundColor = getBackgroundColor();
-    gCtx.fillStyle = getBackgroundColor();
-}
-
 function onChangeShape(shape) {
     updateCanvasShape(shape);
 }
@@ -33,8 +27,6 @@ function onChangeShape(shape) {
 function onChangeCanvasShapeColor(color) {
     updateCanvasColor(color);
     gCtx.strokeStyle = getColor();
-    // gCanvas.style.backgroundColor = getBackgroundColor();
-    // gCtx.fillStyle = getBackgroundColor();
 }
 
 function onChangeCanvasBackgroundColor(backgroundColor) {
@@ -46,7 +38,7 @@ function onChangeCanvasBackgroundColor(backgroundColor) {
 
 function draw(ev) {
     const {offsetX, offsetY} = ev
-    switch(gCanvasSettings.currShape) {
+    switch(getShape()) {
         case 'triangle':
             drawTriangle(offsetX, offsetY);
             break;
@@ -75,8 +67,6 @@ function drawTriangle(x,y) {
     gCtx.lineTo(x, y+75);
     gCtx.closePath()
     gCtx.lineWidth = 5;
-    // ctx.strokeStyle = getColor();
-    // ctx.fillStyle = '#ff0000'
     gCtx.stroke();
     gCtx.fill()
  
