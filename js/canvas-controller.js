@@ -23,7 +23,7 @@ function init() {
 
 function setCanvasSize() {
     gCanvas.width = window.innerWidth;
-    gCanvas.height = window.innerHeight;
+    gCanvas.height = window.innerHeight - 100;
 }
 
 
