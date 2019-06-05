@@ -23,9 +23,9 @@ button, select {
     text-decoration: none;
     border: 1px solid black;
     padding: 0.5rem 2rem;
-    margin: 0 10px 0;
-    background-color: #078d34;
-    border-radius: 15px;
+    margin: 5px;
+    background-color: #099237ef;
+    /* border-radius: 15px; */
     color: #ffffff;
     font-size: 1.1rem;
     line-height: 1;

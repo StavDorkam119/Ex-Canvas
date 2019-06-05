@@ -91,7 +91,7 @@ function drawCircle(x,y) {
     gCtx.beginPath();
     gCtx.arc(x, y, 75, 0, 2 * Math.PI);
     gCtx.stroke();
-    // gCtx.fill();
+    gCtx.fill();
 }
 
 function onClearCanvas() {
