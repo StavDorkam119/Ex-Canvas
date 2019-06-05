@@ -1,6 +1,5 @@
 'use strict'
 
-
 let gCanvasSettings;
 
 function getCanvasSettings() {
@@ -38,4 +37,3 @@ function updateCanvasColor(color) {
     saveToStorage('gCanvasSettings', gCanvasSettings);
 }
 
-var test;

@@ -94,7 +94,7 @@ function drawCircle(x,y) {
     // gCtx.fill();
 }
 
-function downloadImg (el) {
+function downloadCanvas (el) {
     var image = canvas.toDataURL("image/png;base64");
     el.href = image;
   };
